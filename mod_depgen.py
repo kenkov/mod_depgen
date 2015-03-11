@@ -12,13 +12,18 @@ class ModDepgen(Mod):
     def __init__(
         self,
         logger=None,
-        # host="localhost",
-        # port: int=27017,
-        # db: str="cabocha",
-        # coll: str="cases",
+        host="localhost",
+        port: int=27017,
+        db: str="depgen",
+        coll: str="twitter",
     ):
         self.logger = logger if logger else getLogger(__file__)
-        self.ds = DepGenSearch()
+        self.ds = DepGenSearch(
+            host=host,
+            port=port,
+            db=db,
+            coll=coll
+        )
 
     def reses(self, message, master):
         text = message["text"]
