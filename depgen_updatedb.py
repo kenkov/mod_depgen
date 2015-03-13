@@ -47,9 +47,6 @@ class DepgenUpdateDB:
 
         return False
 
-    def reses(self, message, master):
-        return []
-
 
 if __name__ == '__main__':
     import argparse
