@@ -6,7 +6,7 @@ from mod import Mod
 from logging import getLogger
 from depgen_search import DepGenSearch
 import numpy as np
-import config
+import mod_depgen_config as config
 
 
 class ModDepgen(Mod):

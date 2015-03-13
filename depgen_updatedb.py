@@ -6,7 +6,7 @@ import sys
 import pymongo as pm
 from depgen import DepGen
 from logging import getLogger
-import config
+import mod_depgen_config as config
 
 
 class DepgenUpdateDB:
@@ -53,7 +53,6 @@ class DepgenUpdateDB:
 
 if __name__ == '__main__':
     import argparse
-    import sys
 
     # parse arg
     parser = argparse.ArgumentParser()

@@ -3,7 +3,7 @@
 
 from depgen import DepGen
 import pymongo as pm
-import config
+import mod_depgen_config as config
 
 
 class DepGenSearch(DepGen):
