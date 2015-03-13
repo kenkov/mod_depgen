@@ -13,7 +13,7 @@ class ModDepgen(Mod):
     def __init__(
         self,
         logger=None,
-        host=config.host,
+        host=config.hostname,
         port: int=config.port,
         db: str=config.db,
         coll: str=config.coll,
