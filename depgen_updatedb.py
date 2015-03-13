@@ -52,14 +52,10 @@ class DepgenUpdateDB:
 
 if __name__ == '__main__':
 
-    from textfilter import TwitterFilter
-
     dg = DepgenUpdateDB()
-    fil = TwitterFilter()
-
     fd = open(sys.argv[1]) if len(sys.argv) >= 2 else sys.stdin
 
-    for _id, text in enumerate(fil.filter(_.strip() for _ in fd)):
-        lst = dg.update(text)
+    for _id, text in enumerate(_.strip() for _ in fd):
+        dg.update(text)
         if (_id + 1) % 1000 == 0:
             print("{} processed".format(_id + 1))
