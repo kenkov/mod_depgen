@@ -52,11 +52,22 @@ class DepgenUpdateDB:
 
 
 if __name__ == '__main__':
+    import argparse
+    import sys
 
+    # parse arg
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "infile",
+        nargs="?",
+        type=argparse.FileType("r"),
+        default=sys.stdin,
+        help="target name"
+    )
+    args = parser.parse_args()
     dg = DepgenUpdateDB()
-    fd = open(sys.argv[1]) if len(sys.argv) >= 2 else sys.stdin
 
-    for _id, text in enumerate(_.strip() for _ in fd):
+    for _id, text in enumerate(_.strip() for _ in args.infile):
         dg.update(text)
         if (_id + 1) % 1000 == 0:
             print("{} processed".format(_id + 1))
