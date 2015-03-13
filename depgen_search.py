@@ -3,15 +3,16 @@
 
 from depgen import DepGen
 import pymongo as pm
+import config
 
 
 class DepGenSearch(DepGen):
     def __init__(
         self,
-        host="localhost",
-        port=27017,
-        db="depgen",
-        coll="twitter",
+        host=config.hostname,
+        port=config.port,
+        db=config.db,
+        coll=config.coll
     ):
         DepGen.__init__(self)
 

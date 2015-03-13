@@ -6,16 +6,17 @@ from mod import Mod
 from logging import getLogger
 from depgen_search import DepGenSearch
 import numpy as np
+import config
 
 
 class ModDepgen(Mod):
     def __init__(
         self,
         logger=None,
-        host="localhost",
-        port: int=27017,
-        db: str="depgen",
-        coll: str="twitter",
+        host=config.host,
+        port: int=config.port,
+        db: str=config.db,
+        coll: str=config.coll,
     ):
         self.logger = logger if logger else getLogger(__file__)
         self.ds = DepGenSearch(
