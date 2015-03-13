@@ -26,7 +26,7 @@ class ModDepgen(Mod):
             coll=coll
         )
 
-    def reses(self, message, master):
+    def utter(self, message, master):
         text = message["text"]
         cands = self.ds.search(text)
 
